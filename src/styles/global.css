@@ -246,7 +246,7 @@ li {
   inset: 0;
   background:
     linear-gradient(90deg, rgba(255, 248, 239, 0.9), rgba(255, 248, 239, 0) 14%),
-    url("/assets/hero-art-generated.png") center/cover no-repeat;
+    var(--asset-hero-art-generated) center/cover no-repeat;
   border-radius: 0 28px 0 0;
   box-shadow: var(--shadow-soft);
 }
@@ -529,7 +529,7 @@ li {
   inset: 0;
   background:
     linear-gradient(180deg, rgba(247, 244, 238, 0.06), rgba(247, 244, 238, 0.06)),
-    url("/assets/approach-art-regenerated.png") center / cover no-repeat;
+    var(--asset-approach-art-regenerated) center / cover no-repeat;
 }
 
 .section-link-row {
@@ -587,25 +587,25 @@ li {
 .page-hero-art-approche {
   background:
     linear-gradient(180deg, rgba(247, 244, 238, 0.06), rgba(247, 244, 238, 0.06)),
-    url("/assets/approach-art-regenerated.png") center / cover no-repeat;
+    var(--asset-approach-art-regenerated) center / cover no-repeat;
 }
 
 .page-hero-art-motifs {
   background:
     linear-gradient(180deg, rgba(247, 244, 238, 0.08), rgba(247, 244, 238, 0.08)),
-    url("/assets/motifs-page-art.png") center / cover no-repeat;
+    var(--asset-motifs-page-art) center / cover no-repeat;
 }
 
 .page-hero-art-interior {
   background:
     linear-gradient(180deg, rgba(247, 244, 238, 0.08), rgba(247, 244, 238, 0.08)),
-    url("/assets/interior-page-art.png") center / cover no-repeat;
+    var(--asset-interior-page-art) center / cover no-repeat;
 }
 
 .page-hero-art-hero {
   background:
     linear-gradient(180deg, rgba(247, 244, 238, 0.08), rgba(247, 244, 238, 0.08)),
-    url("/assets/hero-art-generated.png") center / cover no-repeat;
+    var(--asset-hero-art-generated) center / cover no-repeat;
 }
 
 .page-section {
@@ -663,7 +663,7 @@ li {
   box-shadow: var(--shadow-soft);
   background:
     linear-gradient(180deg, rgba(247, 244, 238, 0.08), rgba(247, 244, 238, 0.08)),
-    url("/assets/approach-art-regenerated.png") center / cover no-repeat;
+    var(--asset-approach-art-regenerated) center / cover no-repeat;
 }
 
 .approach-manifesto {
@@ -764,7 +764,7 @@ li {
   box-shadow: var(--shadow-soft);
   background:
     linear-gradient(180deg, rgba(247, 244, 238, 0.08), rgba(247, 244, 238, 0.08)),
-    url("/assets/interior-page-art.png") center / cover no-repeat;
+    var(--asset-interior-page-art) center / cover no-repeat;
 }
 
 .approach-editorial-copy {
@@ -853,7 +853,7 @@ li {
   background:
     linear-gradient(90deg, rgba(18, 44, 66, 0.76), rgba(18, 44, 66, 0.48)),
     linear-gradient(180deg, rgba(247, 244, 238, 0.08), rgba(247, 244, 238, 0.08)),
-    url("/assets/cabinet-cta.png") center / cover no-repeat;
+    var(--asset-cabinet-cta) center / cover no-repeat;
   overflow: hidden;
   border-radius: 28px;
 }

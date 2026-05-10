@@ -1,27 +1,44 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-const motifs = [
+const publics = [
   {
-    title: "Anxiété et surcharge",
+    title: "Adolescents et adultes",
     copy:
-      "Quand le mental reste en alerte, que le sommeil se fragilise ou que le quotidien demande trop d’effort."
+      "Pour les personnes qui traversent une période de fragilité, de tension intérieure, de questionnement ou de rupture dans leur équilibre."
   },
   {
-    title: "Transitions de vie",
+    title: "Anxiété, trauma, phobies",
     copy:
-      "Séparation, deuil, changement professionnel, maternité, nouvelle étape ou besoin de retrouver un cap."
+      "Quand l’alerte prend trop de place : troubles anxieux, peurs envahissantes, stress post-traumatique ou souvenirs difficiles."
   },
   {
-    title: "Estime de soi",
+    title: "Corps, douleurs, psychosomatique",
     copy:
-      "Mettre des mots sur les blocages, les répétitions relationnelles et les conflits intérieurs qui prennent de la place."
+      "Lorsque le corps devient le lieu d’expression d’un conflit, d’une douleur chronique, d’une fatigue ou d’un rapport compliqué à soi."
   },
   {
-    title: "Épuisement",
+    title: "Transitions et liens",
     copy:
-      "Retrouver de l’appui après une période de fatigue morale, de burn-out ou de perte d’élan."
+      "Deuil, séparation, maladie, changement de vie, épuisement professionnel, difficultés familiales ou relationnelles."
   }
+];
+
+const competences = [
+  "Psychologie clinique et psychothérapie",
+  "Hypnothérapie et rêve éveillé phénoméno-existentiel",
+  "Psychotraumatologie",
+  "Accompagnement des adolescents et adultes",
+  "Coordination de parcours pluridisciplinaires",
+  "Supervision de psychologues cliniciens"
+];
+
+const formations = [
+  "Diplôme de psychologue clinicienne, École des Psychologues Praticiens",
+  "D.U. de psychotraumatologie, Université Paris Descartes",
+  "Formation en hypnothérapie, Institut Français d’Hypnose",
+  "Formation en rêve éveillé phénoméno-existentiel, IREPHE",
+  "Expériences en cabinet, centre spécialisé, association et suivi pluridisciplinaire"
 ];
 
 const seances = [
@@ -33,147 +50,137 @@ const seances = [
   },
   {
     step: "02",
-    title: "Cadre clair",
+    title: "Cadre ajusté",
     copy:
-      "La fréquence, le rythme et les objectifs se définissent ensemble, avec une attention particulière à votre sécurité."
+      "La fréquence, le rythme et les objectifs se définissent ensemble, selon votre situation et votre disponibilité psychique."
   },
   {
     step: "03",
-    title: "Travail en profondeur",
+    title: "Travail thérapeutique",
     copy:
       "Les séances soutiennent la parole, les ressentis, les ressources et la mise en mouvement progressive."
   }
 ];
-
-const reperes = [
-  "Accueil des adultes, jeunes adultes et adolescents.",
-  "Consultations en cabinet à Nantes et possibilité de rendez-vous en visio.",
-  "Accompagnement ponctuel ou suivi plus régulier selon la situation."
-];
 ---
 
 <BaseLayout
-  title="Aude Rehault | Psychologue clinicienne"
-  description="Aude Rehault, psychologue clinicienne à Nantes et en visio. Consultations pour anxiété, transitions de vie, épuisement et perte de repères."
+  title="Aude Réhault | Psychologue clinicienne"
+  description="Aude Réhault, psychologue clinicienne à Nantes, Clisson et en visio. Psychothérapie, hypnothérapie, psychotraumatologie, anxiété, douleurs chroniques et accompagnement adolescents-adultes."
 >
-  <section class="hero" id="accueil">
-    <div class="hero-copy">
-      <p class="section-kicker">Aude Rehault · Psychologue clinicienne</p>
-      <h1>Un espace pour retrouver appui, clarté et souffle.</h1>
+  <section class="hero section-boundary" id="accueil">
+    <div class="hero-copy reveal">
+      <p class="section-kicker">Aude Réhault · Psychologue clinicienne</p>
+      <h1>Un espace pour traverser, comprendre et retrouver de l’appui.</h1>
       <p class="hero-text">
-        J’accompagne les personnes qui traversent une période de tension, de doute ou de
-        transformation. Le travail thérapeutique offre un lieu calme pour déposer ce qui pèse,
-        comprendre ce qui se répète et remettre du mouvement là où tout semble figé.
+        Psychologue clinicienne, psychothérapeute et hypnothérapeute, Aude Réhault accompagne
+        les adolescents et les adultes confrontés à des difficultés psychiques, corporelles,
+        relationnelles ou existentielles.
       </p>
       <div class="hero-actions">
         <a class="button button-primary" href="#contact">Prendre rendez-vous</a>
-        <a class="button button-secondary" href="#approche">Découvrir l’approche</a>
+        <a class="button button-secondary" href="#publics">À qui ça s’adresse</a>
       </div>
-      <ul class="hero-notes" aria-label="Repères pratiques">
-        {reperes.map((item) => <li>{item}</li>)}
-      </ul>
+      <div class="hero-tags" aria-label="Principaux champs d'accompagnement">
+        <span>Anxiété</span>
+        <span>Psychotrauma</span>
+        <span>Douleurs chroniques</span>
+        <span>Hypnose</span>
+      </div>
     </div>
 
-    <div class="hero-visual" aria-label="Ambiance calme du cabinet">
+    <div class="hero-visual reveal" aria-label="Aquarelle représentant une plage bordée de forêt">
       <div class="hero-image"></div>
       <div class="hero-plate">
-        <span>Consultations</span>
-        <strong>Nantes · Visio</strong>
+        <span>Cabinets</span>
+        <strong>Nantes · Clisson · Visio</strong>
       </div>
     </div>
   </section>
 
-  <section class="intro-strip" aria-label="Repère principal">
+  <section class="intro-strip reveal" aria-label="Repère principal">
     <p>
-      Une présence attentive, un cadre stable, et une approche qui respecte le rythme de chaque
-      personne.
+      Une approche humaniste et phénoméno-existentielle : accueillir la personne dans sa singularité,
+      sans la réduire à un symptôme.
     </p>
   </section>
 
-  <section class="section approach-section" id="approche">
-    <div class="section-heading">
-      <p class="section-kicker">Approche</p>
-      <h2>Écouter ce qui se vit, pas seulement ce qui se dit.</h2>
+  <section class="section section-boundary publics-section" id="publics">
+    <div class="section-heading reveal">
+      <p class="section-kicker">À qui ça s’adresse</p>
+      <h2>Pour les personnes qui cherchent un lieu stable où déposer ce qui déborde.</h2>
       <p>
-        La consultation est pensée comme un espace de parole et de soutien psychique. On y travaille
-        à partir de votre histoire, de vos sensations, de vos liens et des questions qui cherchent à
-        prendre forme.
+        Les demandes peuvent concerner l’anxiété, le psychotraumatisme, les phobies, les douleurs
+        chroniques, le rapport au corps, les conduites addictives, les difficultés personnelles ou
+        professionnelles, ainsi que les périodes de transition.
       </p>
     </div>
 
-    <div class="approach-grid">
-      <article class="principle-card">
-        <span>01</span>
-        <h3>Un cadre fiable</h3>
-        <p>
-          La régularité, la confidentialité et la qualité de présence créent un lieu où il devient
-          possible d’explorer sans se sentir pressé.
-        </p>
-      </article>
-      <article class="principle-card">
-        <span>02</span>
-        <h3>Une parole vivante</h3>
-        <p>
-          Les mots aident à relier les événements, les émotions et les choix du quotidien, pour
-          sortir peu à peu de la confusion.
-        </p>
-      </article>
-      <article class="principle-card">
-        <span>03</span>
-        <h3>Des ressources concrètes</h3>
-        <p>
-          Selon les besoins, le travail peut aussi soutenir l’ancrage, la respiration, la confiance
-          et la capacité à poser des limites.
-        </p>
-      </article>
-    </div>
-  </section>
-
-  <section class="image-band" aria-label="Ambiance intérieure du cabinet">
-    <div class="image-band-copy">
-      <p class="section-kicker">Cadre thérapeutique</p>
-      <h2>Un espace simple, calme et suffisamment souple.</h2>
-      <p>
-        L’accompagnement peut être bref ou s’inscrire dans la durée. L’essentiel est de construire
-        un rythme qui aide vraiment, sans ajouter une contrainte de plus.
-      </p>
-    </div>
-    <div class="image-band-visual"></div>
-  </section>
-
-  <section class="section motifs-section" id="motifs">
-    <div class="section-heading">
-      <p class="section-kicker">Motifs</p>
-      <h2>Quand consulter ?</h2>
-      <p>
-        Il n’est pas nécessaire d’attendre que tout déborde pour demander de l’aide. Une consultation
-        peut simplement commencer par le sentiment que quelque chose a besoin d’être entendu.
-      </p>
-    </div>
-
-    <div class="motif-list">
-      {motifs.map((motif) => (
-        <article class="motif-row">
-          <h3>{motif.title}</h3>
-          <p>{motif.copy}</p>
+    <div class="public-grid">
+      {publics.map((item) => (
+        <article class="public-card reveal">
+          <h3>{item.title}</h3>
+          <p>{item.copy}</p>
         </article>
       ))}
     </div>
   </section>
 
-  <section class="section seances-section" id="seances">
-    <div class="section-heading">
-      <p class="section-kicker">Séances</p>
-      <h2>Un déroulement lisible, ajusté à votre rythme.</h2>
+  <section class="image-band section-boundary reveal" id="approche" aria-label="Approche thérapeutique">
+    <div class="image-band-copy">
+      <p class="section-kicker">Approche</p>
+      <h2>Une écoute clinique, sensible au corps, à l’histoire et aux ressources.</h2>
       <p>
-        Les séances permettent de clarifier ce qui vous amène, puis d’avancer pas à pas vers une
-        meilleure compréhension de vous-même et de vos possibilités d’action.
+        Le travail thérapeutique s’appuie sur la parole, l’hypnose, l’attention aux éprouvés et la
+        construction progressive de repères. Il peut accompagner des moments de crise comme un
+        cheminement plus long.
+      </p>
+    </div>
+    <div class="image-band-visual"></div>
+  </section>
+
+  <section class="section section-boundary practitioner-section" id="praticienne">
+    <div class="section-heading reveal">
+      <p class="section-kicker">Qui est la praticienne</p>
+      <h2>Aude Réhault, psychologue clinicienne et hypnothérapeute.</h2>
+      <p>
+        Son parcours associe cabinet libéral, coordination d’équipes pluridisciplinaires, supervision
+        clinique et engagement associatif. Elle a notamment cofondé La Note Bleue et participé au
+        développement de SOS Anor Grand Ouest à Nantes.
+      </p>
+    </div>
+
+    <div class="practitioner-layout">
+      <div class="practitioner-visual reveal"></div>
+      <div class="practitioner-copy reveal">
+        <article>
+          <h3>Compétences</h3>
+          <ul class="check-list">
+            {competences.map((item) => <li>{item}</li>)}
+          </ul>
+        </article>
+        <article>
+          <h3>Formations et expériences</h3>
+          <ul class="check-list">
+            {formations.map((item) => <li>{item}</li>)}
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-boundary seances-section" id="seances">
+    <div class="section-heading reveal">
+      <p class="section-kicker">Séances</p>
+      <h2>Un cadre clair, sobre et ajusté à votre rythme.</h2>
+      <p>
+        La durée de l’accompagnement dépend de la demande, de la situation et de ce qui se construit
+        au fil des séances. Le premier rendez-vous sert à poser les bases du travail.
       </p>
     </div>
 
     <div class="session-grid">
       {seances.map((seance) => (
-        <article class="session-card">
+        <article class="session-card reveal">
           <span>{seance.step}</span>
           <h3>{seance.title}</h3>
           <p>{seance.copy}</p>
@@ -182,45 +189,31 @@ const reperes = [
     </div>
   </section>
 
-  <section class="parcours-band" id="parcours">
-    <div class="parcours-visual"></div>
-    <div class="parcours-copy">
-      <p class="section-kicker">Parcours</p>
-      <h2>Une pratique clinique ancrée dans l’écoute et l’accompagnement.</h2>
-      <p>
-        La formation de psychologue clinicienne soutient une attention particulière à la singularité
-        de chaque personne. Le parcours, les lectures et la pratique nourrissent une manière de
-        travailler sobre, engagée et respectueuse.
-      </p>
-      <p>
-        Le point de départ reste toujours votre demande : ce qui vous arrive, ce qui insiste, ce que
-        vous souhaitez comprendre ou transformer.
-      </p>
-    </div>
-  </section>
-
-  <section class="contact-band" id="contact">
+  <section class="contact-band section-boundary reveal" id="contact">
     <div class="contact-copy">
       <p class="section-kicker">Contact</p>
       <h2>Prendre rendez-vous</h2>
       <p>
-        Pour un premier échange ou une demande de suivi, vous pouvez me contacter par téléphone ou
-        par email. Les consultations ont lieu sur rendez-vous, en cabinet à Nantes ou en visio.
+        Les consultations se déroulent en cabinet à Nantes ou Clisson, avec possibilité de rendez-vous
+        en visio selon les situations. La prise de rendez-vous se fait en ligne.
       </p>
     </div>
     <address class="contact-card">
       <div>
-        <span>Téléphone</span>
-        <a href="tel:+33600000000">06 00 00 00 00</a>
+        <span>Nantes</span>
+        <p>7 rue des Rochettes, 44000 Nantes</p>
       </div>
       <div>
-        <span>Email</span>
-        <a href="mailto:contact@aude-rehault.fr">contact@aude-rehault.fr</a>
+        <span>Clisson</span>
+        <p>Cabinet libéral à Clisson</p>
       </div>
       <div>
-        <span>Lieu</span>
-        <p>Nantes et consultations en visio</p>
+        <span>Rendez-vous</span>
+        <a href="https://www.doctolib.fr/psychologue/nantes/aude-rehault" target="_blank" rel="noopener noreferrer">
+          Voir les disponibilités
+        </a>
       </div>
     </address>
   </section>
+
 </BaseLayout>

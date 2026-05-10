@@ -12,10 +12,9 @@ const { title, description } = Astro.props;
 const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, "");
 const withBase = (path: string) => (path === "/" ? `${baseUrl}/` || "/" : `${baseUrl}${path}`);
 const assetStyles = [
-  `--asset-hero: url("${withBase("/assets/hero-art-generated.png")}")`,
-  `--asset-approach: url("${withBase("/assets/approach-art-regenerated.png")}")`,
-  `--asset-interior: url("${withBase("/assets/interior-page-art.png")}")`,
-  `--asset-cabinet: url("${withBase("/assets/cabinet-cta.png")}")`
+  `--asset-hero: url("${withBase("/assets/watercolor-hero.png")}")`,
+  `--asset-approach: url("${withBase("/assets/watercolor-approach.png")}")`,
+  `--asset-detail: url("${withBase("/assets/watercolor-detail.png")}")`
 ].join("; ");
 ---
 

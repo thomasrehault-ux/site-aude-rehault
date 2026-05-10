@@ -3,17 +3,17 @@ const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, "");
 const withBase = (path: string) => (path === "/" ? `${baseUrl}/` || "/" : `${baseUrl}${path}`);
 
 const navigation = [
+  { href: "#publics", label: "À qui ?" },
   { href: "#approche", label: "Approche" },
-  { href: "#motifs", label: "Motifs" },
+  { href: "#praticienne", label: "Praticienne" },
   { href: "#seances", label: "Séances" },
-  { href: "#parcours", label: "Parcours" },
   { href: "#contact", label: "Contact" }
 ];
 ---
 
 <header class="site-header">
   <a class="brand" href={withBase("/")}>
-    <span class="brand-title">Aude Rehault</span>
+    <span class="brand-title">Aude Réhault</span>
     <span class="brand-subtitle">Psychologue clinicienne</span>
   </a>
 

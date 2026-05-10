@@ -1,24 +1,20 @@
----
-const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, "");
-const withBase = (path: string) => (path === "/" ? `${baseUrl}/` || "/" : `${baseUrl}${path}`);
----
-
 <footer class="site-footer">
   <div>
-    <h3>Charles-Antoine Menanteau</h3>
-    <p>Psychologue • Psychothérapeute<br />Hypnothérapeute</p>
-    <p>Une pratique clinique attentive à l’expérience vécue, aux crises de sens et aux transformations intérieures.</p>
+    <h3>Aude Rehault</h3>
+    <p>Psychologue clinicienne<br />Nantes et visio</p>
+    <p>Un accompagnement attentif pour traverser les périodes de tension, de transition ou de perte de repères.</p>
   </div>
   <div>
-    <h4>Informations pratiques</h4>
-    <p>Cabinet à Nantes<br />et consultations en visio</p>
-    <p>Sur rendez-vous</p>
+    <h4>Navigation</h4>
+    <p><a href="#approche">Approche</a></p>
+    <p><a href="#seances">Séances</a></p>
+    <p><a href="#contact">Contact</a></p>
   </div>
   <div>
     <h4>Contact</h4>
     <p>06 00 00 00 00</p>
-    <p>contact@charlesantoine-menanteau.fr</p>
-    <p><a href={withBase("/contact")}>Formulaire de contact</a></p>
+    <p><a href="mailto:contact@aude-rehault.fr">contact@aude-rehault.fr</a></p>
+    <p>Sur rendez-vous, en cabinet ou à distance.</p>
   </div>
   <div class="footer-mark" aria-hidden="true"></div>
 </footer>

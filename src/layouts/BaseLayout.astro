@@ -6,19 +6,16 @@ import "../styles/global.css";
 interface Props {
   title: string;
   description: string;
-  currentPath: string;
 }
 
-const { title, description, currentPath } = Astro.props;
-
+const { title, description } = Astro.props;
 const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, "");
 const withBase = (path: string) => (path === "/" ? `${baseUrl}/` || "/" : `${baseUrl}${path}`);
-const assetStyle = [
-  `--asset-hero-art-generated: url("${withBase("/assets/hero-art-generated.png")}")`,
-  `--asset-approach-art-regenerated: url("${withBase("/assets/approach-art-regenerated.png")}")`,
-  `--asset-motifs-page-art: url("${withBase("/assets/motifs-page-art.png")}")`,
-  `--asset-interior-page-art: url("${withBase("/assets/interior-page-art.png")}")`,
-  `--asset-cabinet-cta: url("${withBase("/assets/cabinet-cta.png")}")`
+const assetStyles = [
+  `--asset-hero: url("${withBase("/assets/hero-art-generated.png")}")`,
+  `--asset-approach: url("${withBase("/assets/approach-art-regenerated.png")}")`,
+  `--asset-interior: url("${withBase("/assets/interior-page-art.png")}")`,
+  `--asset-cabinet: url("${withBase("/assets/cabinet-cta.png")}")`
 ].join("; ");
 ---
 
@@ -29,6 +26,7 @@ const assetStyle = [
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <meta name="theme-color" content="#173826" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -36,8 +34,8 @@ const assetStyle = [
       rel="stylesheet"
     />
   </head>
-  <body style={assetStyle}>
-    <SiteHeader currentPath={currentPath} />
+  <body style={assetStyles}>
+    <SiteHeader />
     <div class="page-shell">
       <main>
         <slot />

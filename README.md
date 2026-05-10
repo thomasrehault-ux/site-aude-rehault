@@ -1,6 +1,6 @@
 # Site Aude Rehault
 
-Site vitrine multipage construit avec Astro et publie sur GitHub Pages.
+Site vitrine one pager construit avec Astro et publie sur GitHub Pages.
 
 ## Démarrage
 

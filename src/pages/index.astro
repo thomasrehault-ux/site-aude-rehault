@@ -61,6 +61,8 @@ const seances = [
       "Les séances soutiennent la parole, les ressentis, les ressources et la mise en mouvement progressive."
   }
 ];
+
+const assetPath = (path: string) => `${import.meta.env.BASE_URL.replace(/\/$/, "")}${path}`;
 ---
 
 <BaseLayout
@@ -139,9 +141,19 @@ const seances = [
   </section>
 
   <section class="section section-boundary practitioner-section" id="praticienne">
-    <div class="section-heading reveal">
+    <div class="section-heading practitioner-heading reveal">
       <p class="section-kicker">Qui est la praticienne</p>
-      <h2>Aude Réhault, psychologue clinicienne et hypnothérapeute.</h2>
+      <div class="practitioner-title-lockup">
+        <img
+          class="practitioner-medallion"
+          src={assetPath("/assets/aude-rehault-portrait.jpg")}
+          alt="Portrait d’Aude Réhault"
+          width="239"
+          height="315"
+          loading="lazy"
+        />
+        <h2>Aude Réhault, psychologue clinicienne et hypnothérapeute.</h2>
+      </div>
       <p>
         Son parcours associe cabinet libéral, coordination d’équipes pluridisciplinaires, supervision
         clinique et engagement associatif. Elle a notamment cofondé La Note Bleue et participé au
@@ -150,15 +162,7 @@ const seances = [
     </div>
 
     <div class="practitioner-layout">
-      <figure class="practitioner-visual reveal">
-        <img
-          src={`${import.meta.env.BASE_URL}assets/aude-rehault-portrait.jpg`}
-          alt="Portrait d’Aude Réhault"
-          width="239"
-          height="315"
-          loading="lazy"
-        />
-      </figure>
+      <div class="practitioner-visual reveal"></div>
       <div class="practitioner-copy reveal">
         <article>
           <h3>Compétences</h3>

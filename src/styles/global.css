@@ -533,14 +533,31 @@ li {
 }
 
 .practitioner-visual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
   min-height: 560px;
+  margin: 0;
+  padding: 52px 34px 34px;
   border: 1px solid var(--line);
   border-radius: 8px;
   background:
-    linear-gradient(112deg, rgba(36, 68, 91, 0.1), transparent 52%),
-    linear-gradient(180deg, rgba(255, 255, 248, 0.08), rgba(21, 61, 42, 0.12)),
+    linear-gradient(135deg, rgba(255, 255, 248, 0.82), rgba(255, 255, 248, 0.34) 44%, rgba(36, 68, 91, 0.18)),
+    linear-gradient(180deg, rgba(255, 255, 248, 0.18), rgba(21, 61, 42, 0.13)),
     var(--asset-detail) center / cover no-repeat;
   box-shadow: var(--shadow-soft);
+}
+
+.practitioner-visual img {
+  display: block;
+  width: min(100%, 239px);
+  height: auto;
+  aspect-ratio: 239 / 315;
+  border: 8px solid rgba(255, 255, 248, 0.9);
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 22px 44px rgba(31, 52, 64, 0.22);
 }
 
 .practitioner-copy {

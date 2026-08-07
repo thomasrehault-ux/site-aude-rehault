@@ -1,27 +1,55 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
+import "../styles/aude-v2.css";
 
-const publics = [
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const asset = (path: string) => `${base}${path}`;
+const canonicalUrl = new URL(`${base}/`, Astro.site ?? "https://thomasrehault-ux.github.io").toString();
+const socialImageUrl = new URL(`${base}/og.png`, Astro.site ?? "https://thomasrehault-ux.github.io").toString();
+
+const accompagnements = [
   {
-    title: "Adolescents et adultes",
-    copy:
-      "Pour les personnes qui traversent une période de fragilité, de tension intérieure, de questionnement ou de rupture dans leur équilibre."
+    number: "01",
+    tone: "blue",
+    title: "Anxiété, stress & phobies",
+    copy: "Apaiser l’alerte intérieure, mieux comprendre ce qui l’active et retrouver un sentiment de sécurité."
   },
   {
-    title: "Anxiété, trauma, phobies",
-    copy:
-      "Quand l’alerte prend trop de place : troubles anxieux, peurs envahissantes, stress post-traumatique ou souvenirs difficiles."
+    number: "02",
+    tone: "green",
+    title: "Corps, douleurs & trauma",
+    copy: "Accueillir ce que le corps exprime, traverser les vécus traumatiques et renouer avec ses ressources."
   },
   {
-    title: "Corps, douleurs, psychosomatique",
-    copy:
-      "Lorsque le corps devient le lieu d’expression d’un conflit, d’une douleur chronique, d’une fatigue ou d’un rapport compliqué à soi."
-  },
-  {
-    title: "Transitions et liens",
-    copy:
-      "Deuil, séparation, maladie, changement de vie, épuisement professionnel, difficultés familiales ou relationnelles."
+    number: "03",
+    tone: "sky",
+    title: "Transitions & relations",
+    copy: "Être accompagné lors d’un deuil, d’une séparation, d’un changement de vie ou de difficultés relationnelles."
   }
+];
+
+const etapes = [
+  {
+    number: "1",
+    title: "Premier échange",
+    copy: "Nous faisons connaissance et prenons le temps de clarifier votre demande, votre contexte et vos besoins."
+  },
+  {
+    number: "2",
+    title: "Un cadre ajusté",
+    copy: "Le rythme, la fréquence et les objectifs se définissent ensemble, dans un cadre clair et sécurisant."
+  },
+  {
+    number: "3",
+    title: "Le cheminement",
+    copy: "La parole, l’hypnose et l’attention au corps soutiennent un mouvement progressif, à votre rythme."
+  }
+];
+
+const infos = [
+  { symbol: "◷", label: "Durée d’une séance", value: "Environ 50 minutes" },
+  { symbol: "€", label: "Tarif", value: "À préciser ensemble" },
+  { symbol: "⌂", label: "Consultations", value: "7 rue des Rochettes, Nantes · Clisson · Visio" },
+  { symbol: "↗", label: "Rendez-vous", value: "En ligne sur Doctolib" }
 ];
 
 const competences = [
@@ -40,192 +68,302 @@ const formations = [
   "Formation en rêve éveillé phénoméno-existentiel, IREPHE",
   "Expériences en cabinet, centre spécialisé, association et suivi pluridisciplinaire"
 ];
-
-const seances = [
-  {
-    step: "01",
-    title: "Premier échange",
-    copy:
-      "Un temps pour comprendre votre demande, votre contexte et ce que vous attendez d’un accompagnement."
-  },
-  {
-    step: "02",
-    title: "Cadre ajusté",
-    copy:
-      "La fréquence, le rythme et les objectifs se définissent ensemble, selon votre situation et votre disponibilité psychique."
-  },
-  {
-    step: "03",
-    title: "Travail thérapeutique",
-    copy:
-      "Les séances soutiennent la parole, les ressentis, les ressources et la mise en mouvement progressive."
-  }
-];
-
-const assetPath = (path: string) => `${import.meta.env.BASE_URL.replace(/\/$/, "")}${path}`;
 ---
 
-<BaseLayout
-  title="Aude Réhault | Psychologue clinicienne"
-  description="Aude Réhault, psychologue clinicienne à Nantes, Clisson et en visio. Psychothérapie, hypnothérapie, psychotraumatologie, anxiété, douleurs chroniques et accompagnement adolescents-adultes."
->
-  <section class="hero section-boundary" id="accueil">
-    <div class="hero-copy reveal">
-      <p class="section-kicker">Aude Réhault · Psychologue clinicienne</p>
-      <h1>Un espace pour traverser, comprendre et retrouver de l’appui.</h1>
-      <p class="hero-text">
-        Psychologue clinicienne, psychothérapeute et hypnothérapeute, Aude Réhault accompagne
-        les adolescents et les adultes confrontés à des difficultés psychiques, corporelles,
-        relationnelles ou existentielles.
-      </p>
-      <div class="hero-actions">
-        <a class="button button-primary" href="#contact">Prendre rendez-vous</a>
-        <a class="button button-secondary" href="#publics">À qui ça s’adresse</a>
-      </div>
-      <div class="hero-tags" aria-label="Principaux champs d'accompagnement">
-        <span>Anxiété</span>
-        <span>Psychotrauma</span>
-        <span>Douleurs chroniques</span>
-        <span>Hypnose</span>
-      </div>
-    </div>
-
-    <div class="hero-visual reveal" aria-label="Aquarelle lumineuse en tons verts et bleus">
-      <div class="hero-image"></div>
-      <div class="hero-plate">
-        <span>Cabinets</span>
-        <strong>Nantes · Clisson · Visio</strong>
-      </div>
-    </div>
-  </section>
-
-  <section class="intro-strip reveal" aria-label="Repère principal">
-    <p>
-      Une approche humaniste et phénoméno-existentielle : accueillir la personne dans sa singularité,
-      sans la réduire à un symptôme.
-    </p>
-  </section>
-
-  <section class="section section-boundary publics-section" id="publics">
-    <div class="section-heading reveal">
-      <p class="section-kicker">À qui ça s’adresse</p>
-      <h2>Pour les personnes qui cherchent un lieu stable où déposer ce qui déborde.</h2>
-      <p>
-        Les demandes peuvent concerner l’anxiété, le psychotraumatisme, les phobies, les douleurs
-        chroniques, le rapport au corps, les conduites addictives, les difficultés personnelles ou
-        professionnelles, ainsi que les périodes de transition.
-      </p>
-    </div>
-
-    <div class="public-grid">
-      {publics.map((item) => (
-        <article class="public-card reveal">
-          <h3>{item.title}</h3>
-          <p>{item.copy}</p>
-        </article>
-      ))}
-    </div>
-  </section>
-
-  <section class="image-band section-boundary reveal" id="approche" aria-label="Approche thérapeutique">
-    <div class="image-band-copy">
-      <p class="section-kicker">Approche</p>
-      <h2>Une écoute clinique, sensible au corps, à l’histoire et aux ressources.</h2>
-      <p>
-        Le travail thérapeutique s’appuie sur la parole, l’hypnose, l’attention aux éprouvés et la
-        construction progressive de repères. Il peut accompagner des moments de crise comme un
-        cheminement plus long.
-      </p>
-    </div>
-    <div class="image-band-visual"></div>
-  </section>
-
-  <section class="section section-boundary practitioner-section" id="praticienne">
-    <div class="section-heading practitioner-heading reveal">
-      <p class="section-kicker">Qui est la praticienne</p>
-      <div class="practitioner-title-lockup">
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Aude Réhault, psychologue clinicienne et hypnothérapeute à Nantes, Clisson et en visio. Accompagnement des adolescents et des adultes."
+    />
+    <meta name="theme-color" content="#ebf1fa" />
+    <link rel="canonical" href={canonicalUrl} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:title" content="Aude Réhault · Psychologue clinicienne" />
+    <meta property="og:description" content="Un espace pour écouter, comprendre et avancer." />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={socialImageUrl} />
+    <meta property="og:image:width" content="1731" />
+    <meta property="og:image:height" content="909" />
+    <meta property="og:image:alt" content="Aude Réhault, psychologue clinicienne — un espace pour écouter, comprendre et avancer." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Aude Réhault · Psychologue clinicienne" />
+    <meta name="twitter:description" content="Un espace pour écouter, comprendre et avancer." />
+    <meta name="twitter:image" content={socialImageUrl} />
+    <title>Aude Réhault · Psychologue clinicienne</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header" data-header>
+      <a class="brand" href="#accueil" aria-label="Aude Réhault, revenir à l’accueil">
         <img
-          class="practitioner-medallion"
-          src={assetPath("/assets/aude-rehault-portrait.jpg")}
-          alt="Portrait d’Aude Réhault"
+          class="brand-avatar"
+          src={asset("/assets/aude-rehault-portrait.jpg")}
+          alt=""
           width="239"
           height="315"
-          loading="lazy"
+          aria-hidden="true"
         />
-        <h2>Aude Réhault, psychologue clinicienne et hypnothérapeute.</h2>
-      </div>
-      <p>
-        Son parcours associe cabinet libéral, coordination d’équipes pluridisciplinaires, supervision
-        clinique et engagement associatif. Elle a notamment cofondé La Note Bleue et participé au
-        développement de SOS Anor Grand Ouest à Nantes.
-      </p>
-    </div>
+        <span class="brand-copy">
+          <strong>Aude Réhault</strong>
+          <small>Psychologue clinicienne</small>
+        </span>
+      </a>
 
-    <div class="practitioner-layout">
-      <div class="practitioner-visual reveal"></div>
-      <div class="practitioner-copy reveal">
-        <article>
-          <h3>Compétences</h3>
-          <ul class="check-list">
-            {competences.map((item) => <li>{item}</li>)}
-          </ul>
-        </article>
-        <article>
-          <h3>Formations et expériences</h3>
-          <ul class="check-list">
-            {formations.map((item) => <li>{item}</li>)}
-          </ul>
-        </article>
-      </div>
-    </div>
-  </section>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="main-navigation">
+        <span></span><span></span><span></span>
+        <span class="sr-only">Ouvrir le menu</span>
+      </button>
 
-  <section class="section section-boundary seances-section" id="seances">
-    <div class="section-heading reveal">
-      <p class="section-kicker">Séances</p>
-      <h2>Un cadre clair, sobre et ajusté à votre rythme.</h2>
-      <p>
-        La durée de l’accompagnement dépend de la demande, de la situation et de ce qui se construit
-        au fil des séances. Le premier rendez-vous sert à poser les bases du travail.
-      </p>
-    </div>
+      <nav class="navigation" id="main-navigation" aria-label="Navigation principale">
+        <a href="#accueil">Accueil</a>
+        <a href="#approche">Mon approche</a>
+        <a href="#accompagnements">Accompagnements</a>
+        <a href="#parcours">Mon parcours</a>
+        <a href="#seances">Infos pratiques</a>
+        <a href="#contact">Contact</a>
+      </nav>
 
-    <div class="session-grid">
-      {seances.map((seance) => (
-        <article class="session-card reveal">
-          <span>{seance.step}</span>
-          <h3>{seance.title}</h3>
-          <p>{seance.copy}</p>
-        </article>
-      ))}
-    </div>
-  </section>
+      <a class="button button-header" href="https://www.doctolib.fr/psychologue/nantes/aude-rehault" target="_blank" rel="noopener noreferrer">
+        Prendre rendez-vous
+      </a>
+    </header>
 
-  <section class="contact-band section-boundary reveal" id="contact">
-    <div class="contact-copy">
-      <p class="section-kicker">Contact</p>
-      <h2>Prendre rendez-vous</h2>
-      <p>
-        Les consultations se déroulent en cabinet à Nantes ou Clisson, avec possibilité de rendez-vous
-        en visio selon les situations. La prise de rendez-vous se fait en ligne.
-      </p>
-    </div>
-    <address class="contact-card">
+    <main>
+      <section class="hero" id="accueil">
+        <div class="hero-copy">
+          <p class="eyebrow">Psychologue clinicienne · Nantes, Clisson & visio</p>
+          <h1>Un espace pour vous écouter, comprendre et <em>avancer.</em></h1>
+          <p class="hero-intro">
+            Psychologue clinicienne, psychothérapeute et hypnothérapeute, j’accompagne les
+            adolescents et les adultes lorsque l’équilibre se fragilise, dans un cadre attentif,
+            sécurisant et ajusté à chacun.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="https://www.doctolib.fr/psychologue/nantes/aude-rehault" target="_blank" rel="noopener noreferrer">
+              Prendre rendez-vous
+            </a>
+            <a class="text-link" href="#approche">Découvrir mon approche <span>→</span></a>
+          </div>
+          <dl class="hero-details">
+            <div><dt>Public</dt><dd>Adolescents & adultes</dd></div>
+            <div><dt>Modalités</dt><dd>Cabinet & téléconsultation</dd></div>
+          </dl>
+        </div>
+
+        <div
+          class="hero-visual"
+          style={`--hero-backdrop: url("${asset("/assets/approach-art-generated.png")}")`}
+          aria-hidden="true"
+        ></div>
+      </section>
+
+      <section class="accompaniments section" id="accompagnements">
+        <div class="section-heading">
+          <p class="eyebrow"><span>01</span> Vous accompagner</p>
+          <h2>Des accompagnements adaptés à chaque étape de votre cheminement.</h2>
+          <p>
+            Anxiété, phobies, psychotrauma, douleurs chroniques, conduites addictives,
+            difficultés personnelles ou professionnelles&nbsp;: chaque demande est singulière.
+          </p>
+        </div>
+
+        <div class="card-grid">
+          {accompagnements.map((item) => (
+            <article class:list={["support-card", `support-card-${item.tone}`]}>
+              <span class="card-number">{item.number}</span>
+              <h3>{item.title}</h3>
+              <p>{item.copy}</p>
+              <a href="#contact">En parler ensemble <span>→</span></a>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section class="approach section" id="approche">
+        <div class="approach-visual">
+          <img
+            src={asset("/assets/approach-art-generated.png")}
+            alt="Paysage abstrait à l’aquarelle dans des tons bleu clair"
+            width="1536"
+            height="1024"
+            loading="lazy"
+          />
+            <span class="approach-stamp">
+              <small>Trois repères</small>
+              <strong>Écouter · relier · mettre en mouvement</strong>
+            </span>
+        </div>
+        <div class="approach-copy">
+          <p class="eyebrow"><span>02</span> Mon approche</p>
+          <h2>Une approche intégrative, humaine et sur mesure.</h2>
+          <p>
+            Chaque personne est unique. Mon rôle est de vous offrir un espace sécurisant et
+            bienveillant, où vous pouvez déposer ce que vous traversez et avancer à votre rythme.
+          </p>
+          <p>
+            J’intègre différentes approches thérapeutiques : psychologie clinique, hypnose,
+            psychotraumatologie et rêve éveillé phénoméno-existentiel.
+          </p>
+          <a class="text-link" href="#contact">En savoir plus sur mon approche <span>→</span></a>
+        </div>
+      </section>
+
+      <section class="practitioner section" id="parcours">
+        <div class="practitioner-intro">
+          <div class="practitioner-title">
+            <p class="eyebrow"><span>03</span> Qui suis-je ?</p>
+            <h2>Une formation clinique nourrie par l’expérience du terrain.</h2>
+          </div>
+          <div class="practitioner-summary">
+            <p>
+              Mon parcours associe cabinet libéral, coordination d’équipes pluridisciplinaires,
+              supervision clinique et engagement associatif. J’ai notamment cofondé La Note Bleue
+              et participé au développement de SOS Anor Grand Ouest à Nantes.
+            </p>
+          </div>
+        </div>
+
+        <div class="career-grid">
+          <article class="career-card career-card-blue">
+            <p class="career-label">Compétences</p>
+            <h3>Une pratique clinique, intégrative et pluridisciplinaire.</h3>
+            <ol class="career-list">
+              {competences.map((competence) => (
+                <li><p>{competence}</p></li>
+              ))}
+            </ol>
+          </article>
+
+          <article class="career-card career-card-green">
+            <p class="career-label">Formations et expériences</p>
+            <h3>Un parcours nourri par des cadres et des outils variés.</h3>
+            <ol class="career-list">
+              {formations.map((formation) => (
+                <li><p>{formation}</p></li>
+              ))}
+            </ol>
+          </article>
+        </div>
+      </section>
+
+      <section class="sessions section" id="seances">
+        <div class="section-heading section-heading-wide">
+          <p class="eyebrow"><span>04</span> Comment se déroule une séance ?</p>
+          <h2>Un cadre simple, clair et sécurisant.</h2>
+        </div>
+
+        <ol class="steps">
+          {etapes.map((etape) => (
+            <li>
+              <span class="step-number">{etape.number}</span>
+              <h3>{etape.title}</h3>
+              <p>{etape.copy}</p>
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      <section class="practical section" aria-labelledby="practical-title">
+        <div class="practical-heading">
+          <p class="eyebrow"><span>05</span> Informations pratiques</p>
+          <h2 id="practical-title">Tout ce qu’il faut savoir.</h2>
+        </div>
+        <div class="info-grid">
+          {infos.map((info) => (
+            <article>
+              <span class="info-symbol" aria-hidden="true">{info.symbol}</span>
+              <h3>{info.label}</h3>
+              <p>{info.value}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section class="contact section" id="contact">
+        <div class="contact-copy">
+          <p class="eyebrow"><span>06</span> Contact</p>
+          <h2>Vous vous demandez si cet accompagnement peut vous convenir&nbsp;?</h2>
+          <p>N’hésitez pas à me contacter pour un premier échange.</p>
+          <div class="contact-actions">
+            <a class="button button-green" href="https://www.doctolib.fr/psychologue/nantes/aude-rehault" target="_blank" rel="noopener noreferrer">
+              Prendre rendez-vous
+            </a>
+            <a class="text-link" href="https://www.doctolib.fr/psychologue/nantes/aude-rehault" target="_blank" rel="noopener noreferrer">
+              Voir les disponibilités <span>→</span>
+            </a>
+          </div>
+        </div>
+        <figure class="contact-visual">
+          <img
+            src={asset("/assets/cabinet-aude.jpg")}
+            alt="Le cabinet de consultation d’Aude Réhault"
+            width="2200"
+            height="942"
+            loading="lazy"
+          />
+        </figure>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <a class="brand footer-brand" href="#accueil">
+        <img
+          class="brand-avatar"
+          src={asset("/assets/aude-rehault-portrait.jpg")}
+          alt=""
+          width="239"
+          height="315"
+          aria-hidden="true"
+        />
+        <span class="brand-copy"><strong>Aude Réhault</strong><small>Psychologue clinicienne</small></span>
+      </a>
       <div>
-        <span>Nantes</span>
-        <p>7 rue des Rochettes, 44000 Nantes</p>
+        <h2>Navigation</h2>
+        <a href="#approche">Mon approche</a>
+        <a href="#accompagnements">Accompagnements</a>
+        <a href="#parcours">Mon parcours</a>
+        <a href="#seances">Infos pratiques</a>
       </div>
       <div>
-        <span>Clisson</span>
-        <p>Cabinet libéral à Clisson</p>
+        <h2>Cabinets</h2>
+        <p>Nantes · Clisson</p>
+        <p>Consultations en visio</p>
       </div>
       <div>
-        <span>Rendez-vous</span>
-        <a href="https://www.doctolib.fr/psychologue/nantes/aude-rehault" target="_blank" rel="noopener noreferrer">
-          Voir les disponibilités
-        </a>
+        <h2>Informations</h2>
+        <a href="#contact">Contact</a>
+        <p>Mentions légales</p>
+        <p>Politique de confidentialité</p>
       </div>
-    </address>
-  </section>
+      <p class="footer-bottom">© {new Date().getFullYear()} Aude Réhault · Tous droits réservés</p>
+    </footer>
 
-</BaseLayout>
+    <script is:inline>
+      const menuButton = document.querySelector(".menu-button");
+      const navigation = document.querySelector(".navigation");
+
+      menuButton?.addEventListener("click", () => {
+        const isOpen = menuButton.getAttribute("aria-expanded") === "true";
+        menuButton.setAttribute("aria-expanded", String(!isOpen));
+        navigation?.classList.toggle("is-open", !isOpen);
+      });
+
+      navigation?.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          menuButton?.setAttribute("aria-expanded", "false");
+          navigation.classList.remove("is-open");
+        });
+      });
+    </script>
+  </body>
+</html>

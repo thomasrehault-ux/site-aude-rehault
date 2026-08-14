@@ -348,9 +348,9 @@ img {
 }
 
 .hero-visual::before {
-  background: var(--hero-backdrop) center / cover no-repeat;
-  filter: saturate(1.06) contrast(0.96) brightness(1.06);
-  opacity: 0.58;
+  background: var(--hero-backdrop) 62% center / cover no-repeat;
+  filter: saturate(1.02) contrast(0.98) brightness(1.03);
+  opacity: 0.78;
 }
 
 .hero-visual::after {

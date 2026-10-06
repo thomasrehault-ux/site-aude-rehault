@@ -23,7 +23,7 @@ const accompagnements = [
     number: "03",
     tone: "sky",
     title: "Traversées existentielles",
-    copy: "Changements de vie, post-partum, deuil, séparation, crises existentielles…"
+    copy: "Changements de vie, péri-natalité, deuil, séparation, crises existentielles…"
   }
 ];
 
@@ -41,7 +41,8 @@ const competences = [
   "Troubles des conduites alimentaires (TCA)",
   "Accompagnement des adolescents et adultes",
   "Coordination de parcours pluridisciplinaires",
-  "Supervision de psychologues cliniciens"
+  "Supervision de psychologues cliniciens",
+  "Écriture et publications cliniques"
 ];
 
 const formations = [
@@ -109,9 +110,10 @@ const formations = [
 
       <nav class="navigation" id="main-navigation" aria-label="Navigation principale">
         <a href="#accueil">Accueil</a>
-        <a href="#approche">Ma pratique</a>
         <a href="#accompagnements">Accompagnements</a>
+        <a href="#approche">Ma pratique</a>
         <a href="#parcours">Mon parcours</a>
+        <a href="#publications">Publications</a>
         <a href="#informations">Infos pratiques</a>
       </nav>
 
@@ -127,10 +129,6 @@ const formations = [
             Psychologue Clinicienne <span class="hero-separator">–</span>
             Psychothérapeute <span class="hero-separator">–</span> Hypnothérapeute
           </h1>
-          <div class="hero-lines">
-            <p>Nantes et Clisson</p>
-            <p>Adolescents et adultes</p>
-          </div>
           <div class="hero-actions">
             <a class="button button-primary" href="https://www.doctolib.fr/psychologue/nantes/aude-rehault" target="_blank" rel="noopener noreferrer">
               Prendre rendez-vous
@@ -139,6 +137,7 @@ const formations = [
           </div>
           <dl class="hero-details">
             <div><dt>Public</dt><dd>Adolescents & adultes</dd></div>
+            <div><dt>Lieu de consultation</dt><dd>Nantes et Clisson</dd></div>
           </dl>
         </div>
 
@@ -160,9 +159,6 @@ const formations = [
               <span class="card-number">{item.number}</span>
               <h3>{item.title}</h3>
               <p>{item.copy}</p>
-              <a href="https://www.doctolib.fr/psychologue/nantes/aude-rehault" target="_blank" rel="noopener noreferrer">
-                En parler ensemble <span>→</span>
-              </a>
             </article>
           ))}
         </div>
@@ -178,7 +174,7 @@ const formations = [
             loading="lazy"
           />
             <span class="approach-stamp">
-              <strong>Écouter · relier · mettre en mouvement</strong>
+              <strong>Écouter, expérimenter, comprendre, ouvrir, mettre en mouvement</strong>
             </span>
         </div>
         <div class="approach-copy">
@@ -189,7 +185,7 @@ const formations = [
             <li>Individuelle</li>
             <li>Hypnose et états modifiés de conscience</li>
             <li>Psycho-corporelle</li>
-            <li>Prend en compte toutes les dimensions de l’être</li>
+            <li>Prise en compte de toutes les dimensions de l’être</li>
           </ul>
         </div>
       </section>
@@ -203,9 +199,10 @@ const formations = [
           <div class="practitioner-summary">
             <p>
               Mon parcours associe cabinet libéral, coordination d’équipes pluridisciplinaires,
-              formation, supervision clinique et engagement associatif. J’ai notamment cofondé
-              l’association La Note Bleue et SOS Anor à Paris, et fondé le cabinet La Note Bleue à
-              Nantes.
+              formation, supervision clinique, engagement associatif et travail d’écriture. J’ai
+              notamment cofondé l’association La Note Bleue et SOS Anor à Paris, puis créé le
+              cabinet La Note Bleue à Nantes. Je suis également auteure d’ouvrages et d’articles
+              consacrés à la clinique, à l’hypnose et aux troubles des conduites alimentaires.
             </p>
           </div>
         </div>
@@ -219,6 +216,9 @@ const formations = [
                 <li><p>{competence}</p></li>
               ))}
             </ol>
+            <a class="text-link career-publication-link" href="#publications">
+              Découvrir mes publications <span>→</span>
+            </a>
           </article>
 
           <article class="career-card career-card-green">
@@ -232,7 +232,7 @@ const formations = [
           </article>
         </div>
 
-        <div class="publications" aria-labelledby="publications-title">
+        <div class="publications" id="publications" aria-labelledby="publications-title">
           <div class="publications-heading">
             <p class="eyebrow">Écriture & transmission</p>
             <h2 id="publications-title">Publications et médias</h2>
@@ -266,6 +266,60 @@ const formations = [
                   rel="noopener noreferrer"
                 >
                   Découvrir le livre <span>→</span>
+                </a>
+              </div>
+            </article>
+
+            <article class="publication-card publication-article">
+              <a
+                class="publication-visual publication-visual-review"
+                href="https://doi.org/10.3917/jhsi.019.0040"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Lire l’article Troubles du comportement alimentaire d’Aude Réhault sur Cairn.info"
+              >
+                <span>La Revue de l’hypnose et de la santé</span>
+                <strong>N°19</strong>
+                <small>2/2022 · Dunod</small>
+              </a>
+              <div class="publication-copy">
+                <p class="publication-type">Article</p>
+                <h3>Troubles du comportement alimentaire</h3>
+                <p>Par Aude Réhault · pages 40–47.</p>
+                <a
+                  class="text-link"
+                  href="https://doi.org/10.3917/jhsi.019.0040"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Lire sur Cairn.info <span>→</span>
+                </a>
+              </div>
+            </article>
+
+            <article class="publication-card publication-collective-book">
+              <a
+                class="publication-visual publication-visual-collective"
+                href="https://www.dunod.com/sciences-humaines-et-sociales/psychotherapies-adultes-victimes-d-inceste-ou-violences-sexuelles-dans"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Voir l’ouvrage Psychothérapies des adultes victimes d’inceste ou de violences sexuelles dans l’enfance chez Dunod"
+              >
+                <span>Dunod</span>
+                <strong>Psychothérapies</strong>
+                <small>À paraître · novembre 2026</small>
+              </a>
+              <div class="publication-copy">
+                <p class="publication-type">Ouvrage collectif</p>
+                <h3>Psychothérapies des adultes victimes d’inceste ou de violences sexuelles dans l’enfance</h3>
+                <p>Contribution d’Aude Réhault à l’ouvrage collectif dirigé par Joanna Smith.</p>
+                <a
+                  class="text-link"
+                  href="https://www.dunod.com/sciences-humaines-et-sociales/psychotherapies-adultes-victimes-d-inceste-ou-violences-sexuelles-dans"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Découvrir chez Dunod <span>→</span>
                 </a>
               </div>
             </article>
@@ -330,9 +384,10 @@ const formations = [
       </a>
       <div>
         <h2>Navigation</h2>
-        <a href="#approche">Ma pratique</a>
         <a href="#accompagnements">Accompagnements</a>
+        <a href="#approche">Ma pratique</a>
         <a href="#parcours">Mon parcours</a>
+        <a href="#publications">Publications</a>
         <a href="#informations">Infos pratiques</a>
       </div>
       <div>

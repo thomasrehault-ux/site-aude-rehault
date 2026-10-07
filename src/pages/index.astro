@@ -241,7 +241,7 @@ const formations = [
           <div class="publications-grid">
             <article class="publication-card publication-book">
               <a
-                class="book-cover"
+                class="publication-cover publication-cover-primary"
                 href="https://www.amazon.fr/Sortir-lanorexie-boulimie-trajectoire-daccompagnement-ebook/dp/B0BZZ8FTBR?ref_=ast_author_mpb"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -272,15 +272,19 @@ const formations = [
 
             <article class="publication-card publication-article">
               <a
-                class="publication-visual publication-visual-review"
+                class="publication-cover publication-cover-review"
                 href="https://doi.org/10.3917/jhsi.019.0040"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Lire l’article Troubles du comportement alimentaire d’Aude Réhault sur Cairn.info"
               >
-                <span>La Revue de l’hypnose et de la santé</span>
-                <strong>N°19</strong>
-                <small>2/2022 · Dunod</small>
+                <img
+                  src={asset("/assets/revue-hypnose-sante-19.png")}
+                  alt="Couverture du numéro 19 de La Revue de l’hypnose et de la santé"
+                  width="355"
+                  height="508"
+                  loading="lazy"
+                />
               </a>
               <div class="publication-copy">
                 <p class="publication-type">Article</p>
@@ -299,15 +303,19 @@ const formations = [
 
             <article class="publication-card publication-collective-book">
               <a
-                class="publication-visual publication-visual-collective"
+                class="publication-cover publication-cover-collective"
                 href="https://www.dunod.com/sciences-humaines-et-sociales/psychotherapies-adultes-victimes-d-inceste-ou-violences-sexuelles-dans"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Voir l’ouvrage Psychothérapies des adultes victimes d’inceste ou de violences sexuelles dans l’enfance chez Dunod"
               >
-                <span>Dunod</span>
-                <strong>Psychothérapies</strong>
-                <small>À paraître · novembre 2026</small>
+                <img
+                  src={asset("/assets/psychotherapies-adultes-victimes-inceste.png")}
+                  alt="Couverture du livre Psychothérapies des adultes victimes d’inceste ou de violences sexuelles dans l’enfance"
+                  width="403"
+                  height="508"
+                  loading="lazy"
+                />
               </a>
               <div class="publication-copy">
                 <p class="publication-type">Ouvrage collectif</p>
@@ -367,6 +375,15 @@ const formations = [
             </article>
           ))}
         </div>
+        <figure class="cabinet-visual">
+          <img
+            src={asset("/assets/cabinet-aude.jpg")}
+            alt="Le cabinet de consultation d’Aude Réhault"
+            width="2200"
+            height="942"
+            loading="lazy"
+          />
+        </figure>
       </section>
     </main>
 

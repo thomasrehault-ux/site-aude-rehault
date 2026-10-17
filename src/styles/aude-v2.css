@@ -276,23 +276,12 @@ img {
 .text-link {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
   padding: 8px 0 6px;
   border-bottom: 1px solid rgba(43, 76, 111, 0.28);
   color: var(--blue);
   font-size: 0.76rem;
   font-weight: 600;
   text-decoration: none;
-}
-
-.text-link span {
-  color: var(--green);
-  transition: transform 170ms ease;
-}
-
-.text-link:hover span,
-.text-link:focus-visible span {
-  transform: translateX(4px);
 }
 
 .hero-details {

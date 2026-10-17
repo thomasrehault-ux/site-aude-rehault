@@ -11,26 +11,26 @@ Page : `/mentions-legales/`, accessible depuis le pied de page de l’accueil et
 - Directrice de publication : Aude Réhault.
 - SIRET : 530 360 908 00020 (fourni : `53036090800020`).
 - RPPS : 10009472159.
-- Adresse e-mail : à créer auprès du prestataire de messagerie.
+- Adresse e-mail retenue : contact@auderehault.fr, création et fonctionnement à vérifier chez OVH.
 - Domaine définitif : `auderehault.fr`, identique au site actuel.
 - Pays d’obtention du titre de psychologue : France.
 - Aucun numéro de TVA intracommunautaire, selon confirmation de Thomas. Aucune déduction sur le régime d’exonération.
 
 ## Informations à confirmer pour finaliser la page
 
-- Organisme d’enregistrement et références professionnelles applicables.
-- Prestataire d’hébergement définitif et création de l’adresse de contact dans la messagerie IONOS.
+- Organisme confirmé par Thomas : Agence régionale de santé (ARS) des Pays de la Loire. Référence ajoutée : article 44 de la loi n° 85-772 du 25 juillet 1985, avec lien vers la présentation officielle du ministère.
+- Création et test de l’adresse de contact dans la messagerie OVH.
 - L’hébergeur est désormais préparé pour Cloudflare Pages à la racine ; l’aperçu sous le sous-répertoire GitHub conserve ses coordonnées GitHub. Coordonnées Cloudflare vérifiées : Cloudflare, Inc., 101 Townsend Street, San Francisco, CA 94107, États-Unis, +1 650 319 8930 ([source officielle](https://www.cloudflare.com/privacypolicy/)). La création de l’adresse e-mail et les informations professionnelles en attente restent à finaliser.
 
 ## Proposition d’adresse e-mail
 
-Proposition : `contact@auderehault.fr`, sur le domaine confirmé par Thomas. La page présente cette adresse comme une proposition à créer. Ne pas publier de lien `mailto:` avant que l’adresse existe et que la réception ait été vérifiée.
+Adresse retenue par Thomas : `contact@auderehault.fr`, à créer dans la boîte Zimbra Starter incluse avec le transfert OVH (commande n° 261297459). La page la conserve en attente de création. Ne pas publier de lien `mailto:` avant que l’adresse existe et que la réception ait été vérifiée.
 
 La création effective de la boîte ou d’un alias nécessite le domaine et l’accès au service de messagerie. Aucun service de messagerie n’est configuré dans ce dépôt.
 
-Les enregistrements DNS publics consultés le 17 octobre 2026 indiquent `mx00.ionos.fr` et `mx01.ionos.fr` comme serveurs MX. Thomas confirme que la boîte `contact@auderehault.fr` n’existe pas encore. Elle reste à créer et à tester dans le compte IONOS qui gère la messagerie du domaine.
+Les MX IONOS restent temporairement en place. Thomas indique avoir validé la création dans OVH, mais la liste Zimbra actualisée affiche encore zéro compte. Le domaine attend la validation de son CNAME ; vérifier ensuite la création effective et configurer les DNS OVH avant de tester la réception.
 
-La confirmation du domaine ne modifie pas la configuration Astro ni le DNS : l’aperçu reste hébergé sur GitHub Pages, et la bascule du domaine sera préparée lors de la mise en ligne.
+Le site est désormais déployé sur Cloudflare Pages avec le domaine de production `auderehault.fr`. L’aperçu GitHub Pages est conservé séparément.
 
 ## État du brouillon
 

@@ -1,0 +1,21 @@
+# Anciennes URL WordPress, si demandées sur auderehault.fr.
+# Les liens sur auderehault.wordpress.com nécessitent une action chez WordPress.
+/aude-rehault /#parcours 301
+/aude-rehault/ /#parcours 301
+/aude-rehault/experiences /#parcours 301
+/aude-rehault/experiences/ /#parcours 301
+/aude-rehault/formations /#parcours 301
+/aude-rehault/formations/ /#parcours 301
+/aude-rehault/methode /#approche 301
+/aude-rehault/methode/ /#approche 301
+/aude-rehault/tarifs /#informations 301
+/aude-rehault/tarifs/ /#informations 301
+/contact /#informations 301
+/contact/ /#informations 301
+/pourquoi-consulter /#accompagnements 301
+/pourquoi-consulter/ /#accompagnements 301
+/psychotherapie /#approche 301
+/psychotherapie/ /#approche 301
+/liens/livres /#publications 301
+/liens/livres/ /#publications 301
+# Pas de redirection globale : les contenus sans équivalent retournent une vraie 404.

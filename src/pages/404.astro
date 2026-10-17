@@ -1,0 +1,23 @@
+---
+import AudeFooter from "../components/AudeFooter.astro";
+import "../styles/aude-v2.css";
+const home = import.meta.env.BASE_URL;
+---
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, follow" />
+    <title>Page introuvable · Aude Réhault</title>
+  </head>
+  <body>
+    <main style="max-width: 760px; margin: 0 auto; padding: 100px 24px;">
+      <p class="eyebrow">Aude Réhault</p>
+      <h1>Cette page n’existe plus.</h1>
+      <p>Retrouvez les informations sur ma pratique, mon parcours et les rendez-vous sur la page d’accueil.</p>
+      <a class="button button-primary" href={home}>Retour à l’accueil</a>
+    </main>
+    <AudeFooter />
+  </body>
+</html>

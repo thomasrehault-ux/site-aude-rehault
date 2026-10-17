@@ -4,7 +4,8 @@ import "../styles/aude-v2.css";
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 const home = `${base}/`;
-const canonicalUrl = new URL(`${base}/mentions-legales/`, Astro.site).toString();
+const canonicalUrl = new URL("/mentions-legales/", Astro.site).toString();
+const cloudflareHosted = base === "";
 ---
 
 <!doctype html>
@@ -70,12 +71,12 @@ const canonicalUrl = new URL(`${base}/mentions-legales/`, Astro.site).toString()
 
       <section class="legal-section" aria-labelledby="hebergement-title">
         <h2 id="hebergement-title">Hébergement</h2>
-        <p>Le site est actuellement hébergé par GitHub Pages.</p>
+        <p>Ce site est hébergé par {cloudflareHosted ? "Cloudflare Pages" : "GitHub Pages (aperçu)"}.</p>
         <dl class="legal-details">
-          <div><dt>Hébergeur</dt><dd>GitHub, Inc.</dd></div>
-          <div><dt>Adresse</dt><dd>88 Colin P. Kelly Jr. Street<br />San Francisco, CA 94107<br />États-Unis</dd></div>
-          <div><dt>Téléphone</dt><dd class="legal-pending">À confirmer auprès de l’hébergeur</dd></div>
-          <div><dt>Site internet</dt><dd><a href="https://pages.github.com/" target="_blank" rel="noopener noreferrer">GitHub Pages</a></dd></div>
+          <div><dt>Hébergeur</dt><dd>{cloudflareHosted ? "Cloudflare, Inc." : "GitHub, Inc."}</dd></div>
+          <div><dt>Adresse</dt><dd>{cloudflareHosted ? "101 Townsend Street" : "88 Colin P. Kelly Jr. Street"}<br />San Francisco, CA 94107<br />États-Unis</dd></div>
+          <div><dt>Téléphone</dt><dd>{cloudflareHosted ? <a href="tel:+16503198930">+1 650 319 8930</a> : "À confirmer auprès de l’hébergeur"}</dd></div>
+          <div><dt>Site internet</dt><dd><a href={cloudflareHosted ? "https://www.cloudflare.com/" : "https://pages.github.com/"} target="_blank" rel="noopener noreferrer">{cloudflareHosted ? "Cloudflare" : "GitHub Pages"}</a></dd></div>
         </dl>
       </section>
 

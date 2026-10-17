@@ -20,7 +20,7 @@ Page : `/mentions-legales/`, accessible depuis le pied de page de l’accueil et
 
 - Organisme d’enregistrement et références professionnelles applicables.
 - Prestataire d’hébergement définitif et création de l’adresse de contact dans la messagerie IONOS.
-- Coordonnées complètes de l’hébergeur définitif, notamment son numéro de téléphone. La page décrit l’hébergement GitHub Pages configuré dans le dépôt.
+- L’hébergeur est désormais préparé pour Cloudflare Pages à la racine ; l’aperçu sous le sous-répertoire GitHub conserve ses coordonnées GitHub. Coordonnées Cloudflare vérifiées : Cloudflare, Inc., 101 Townsend Street, San Francisco, CA 94107, États-Unis, +1 650 319 8930 ([source officielle](https://www.cloudflare.com/privacypolicy/)). La création de l’adresse e-mail et les informations professionnelles en attente restent à finaliser.
 
 ## Proposition d’adresse e-mail
 

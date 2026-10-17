@@ -9,7 +9,8 @@ Page : `/mentions-legales/`, accessible depuis le pied de page de l’accueil et
 - Domiciliation : 6 et 7 rue des Rochettes, 44000 Nantes.
 - Téléphone : 07 83 11 25 05.
 - Directrice de publication : Aude Réhault.
-- SIRET et RPPS : à définir.
+- SIRET : 530 360 908 00020 (fourni : `53036090800020`).
+- RPPS : 10009472159.
 - Adresse e-mail : à créer auprès du prestataire de messagerie.
 - Domaine définitif : `auderehault.fr`, identique au site actuel.
 - Pays d’obtention du titre de psychologue : France.
@@ -17,7 +18,7 @@ Page : `/mentions-legales/`, accessible depuis le pied de page de l’accueil et
 
 ## Informations à confirmer pour finaliser la page
 
-- SIRET et RPPS exacts, puis organisme d’enregistrement et références professionnelles applicables.
+- Organisme d’enregistrement et références professionnelles applicables.
 - Prestataire d’hébergement définitif et création de l’adresse de contact dans la messagerie IONOS.
 - Coordonnées complètes de l’hébergeur définitif, notamment son numéro de téléphone. La page décrit l’hébergement GitHub Pages configuré dans le dépôt.
 
@@ -52,3 +53,4 @@ La politique de confidentialité reste un sujet distinct : le site charge des po
 - Contrôle visuel à 375 px non effectué : l’interface de navigation disponible ne propose pas de réglage de la largeur. Les styles prévoient une présentation sur une colonne sous 520 px.
 - Les fichiers locaux non suivis de propositions graphiques ne font pas partie de cette modification.
 - Après les précisions de Thomas : code postal, pays d’obtention du titre, absence de numéro de TVA et proposition d’adresse sur `auderehault.fr` intégrés ; nouvelle compilation et contrôle du diff réussis.
+- SIRET et RPPS transmis par Thomas intégrés ; nouvelle compilation et contrôle du diff réussis.

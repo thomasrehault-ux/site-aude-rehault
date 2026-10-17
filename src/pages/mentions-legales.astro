@@ -1,0 +1,212 @@
+---
+import AudeFooter from "../components/AudeFooter.astro";
+import "../styles/aude-v2.css";
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const home = `${base}/`;
+const canonicalUrl = new URL(`${base}/mentions-legales/`, Astro.site).toString();
+---
+
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mentions légales · Aude Réhault</title>
+    <meta name="description" content="Informations relatives à l’édition et à l’hébergement du site d’Aude Réhault, psychologue clinicienne à Nantes et Clisson." />
+    <meta name="theme-color" content="#ebf1fa" />
+    <!-- Retirer noindex après validation des informations encore à compléter. -->
+    <meta name="robots" content="noindex, follow" />
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <header class="header legal-header">
+      <a class="brand" href={home} aria-label="Aude Réhault, revenir à l’accueil">
+        <img class="brand-avatar" src={`${base}/assets/aude-rehault-portrait.jpg`} alt="" width="239" height="315" aria-hidden="true" />
+        <span class="brand-copy"><strong>Aude Réhault</strong><small>Psychologue clinicienne</small></span>
+      </a>
+      <a class="text-link" href={home}>Retour à l’accueil</a>
+    </header>
+
+    <main class="legal-page" id="contenu">
+      <div class="legal-intro">
+        <p class="eyebrow">Informations</p>
+        <h1>Mentions légales</h1>
+        <p>Informations relatives à l’édition et à l’hébergement de ce site.</p>
+        <aside class="legal-notice" aria-label="État de la page">
+          <strong>Version en préparation</strong>
+          <p>Certaines informations sont en cours de confirmation. Cette page sera complétée avant sa publication définitive.</p>
+        </aside>
+      </div>
+
+      <section class="legal-section" aria-labelledby="editeur-title">
+        <h2 id="editeur-title">Édition du site</h2>
+        <dl class="legal-details">
+          <div><dt>Éditrice</dt><dd>Aude Réhault, entrepreneur individuel (EI)</dd></div>
+          <div><dt>Activité</dt><dd>Psychologue clinicienne, psychothérapeute et hypnothérapeute</dd></div>
+          <div><dt>Domiciliation de l’activité</dt><dd>6 et 7 rue des Rochettes<br />44000 Nantes, France</dd></div>
+          <div><dt>SIREN</dt><dd>530 360 908</dd></div>
+          <div><dt>SIRET</dt><dd>530 360 908 00020</dd></div>
+          <div><dt>TVA intracommunautaire</dt><dd>Aucun numéro de TVA intracommunautaire</dd></div>
+          <div><dt>Téléphone</dt><dd><a href="tel:+33783112505">07 83 11 25 05</a></dd></div>
+          <div><dt>Adresse e-mail</dt><dd class="legal-pending">contact@auderehault.fr (adresse proposée, à créer)</dd></div>
+          <div><dt>Directrice de publication</dt><dd>Aude Réhault</dd></div>
+        </dl>
+      </section>
+
+      <section class="legal-section" aria-labelledby="profession-title">
+        <h2 id="profession-title">Informations professionnelles</h2>
+        <dl class="legal-details">
+          <div><dt>Titre professionnel</dt><dd>Psychologue</dd></div>
+          <div><dt>Numéro RPPS</dt><dd>10009472159</dd></div>
+          <div><dt>Pays d’obtention du titre</dt><dd>France</dd></div>
+          <div><dt>Organisme d’enregistrement</dt><dd class="legal-pending">À confirmer</dd></div>
+        </dl>
+        <p>Les références aux règles professionnelles applicables seront précisées après confirmation des informations d’enregistrement.</p>
+      </section>
+
+      <section class="legal-section" aria-labelledby="hebergement-title">
+        <h2 id="hebergement-title">Hébergement</h2>
+        <p>Le site est actuellement hébergé par GitHub Pages.</p>
+        <dl class="legal-details">
+          <div><dt>Hébergeur</dt><dd>GitHub, Inc.</dd></div>
+          <div><dt>Adresse</dt><dd>88 Colin P. Kelly Jr. Street<br />San Francisco, CA 94107<br />États-Unis</dd></div>
+          <div><dt>Téléphone</dt><dd class="legal-pending">À confirmer auprès de l’hébergeur</dd></div>
+          <div><dt>Site internet</dt><dd><a href="https://pages.github.com/" target="_blank" rel="noopener noreferrer">GitHub Pages</a></dd></div>
+        </dl>
+      </section>
+
+      <section class="legal-section" aria-labelledby="contenus-title">
+        <h2 id="contenus-title">Contenus et liens externes</h2>
+        <p>Ce site présente l’activité, le parcours et les publications d’Aude Réhault. La prise de rendez-vous s’effectue sur Doctolib, accessible par les liens présents sur le site.</p>
+        <p>Les textes, photographies, illustrations, couvertures d’ouvrages et vidéos sont soumis aux droits de leurs titulaires respectifs. Leur reproduction ou leur réutilisation doit respecter les droits applicables.</p>
+        <p>Les sites externes accessibles depuis ce site disposent de leurs propres conditions d’utilisation et politiques de confidentialité.</p>
+      </section>
+
+      <a class="text-link" href={home}>Retour à l’accueil</a>
+    </main>
+
+    <AudeFooter />
+  </body>
+</html>
+
+<style>
+  .legal-header {
+    grid-template-columns: 1fr auto;
+    gap: 20px;
+  }
+
+  .legal-header > .text-link {
+    font-size: 0.75rem;
+  }
+
+  .legal-page {
+    max-width: 960px;
+    padding: 72px 32px 88px;
+    margin: 0 auto;
+  }
+
+  .legal-intro h1 {
+    margin: 18px 0 22px;
+    color: var(--blue);
+    font-size: clamp(2.8rem, 6vw, 4.6rem);
+    line-height: 1.12;
+  }
+
+  .legal-page p,
+  .legal-details {
+    color: var(--ink-soft);
+    font-size: 0.92rem;
+    line-height: 1.8;
+  }
+
+  .legal-notice {
+    padding: 20px 24px;
+    margin-top: 30px;
+    border-left: 3px solid var(--sky);
+    border-radius: 4px;
+    background: var(--mist);
+  }
+
+  .legal-notice strong {
+    color: var(--blue);
+    font-size: 0.85rem;
+  }
+
+  .legal-notice p {
+    margin-top: 6px;
+  }
+
+  .legal-section {
+    padding: 36px 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .legal-section h2 {
+    margin-bottom: 22px;
+    color: var(--blue);
+    font-size: 1.9rem;
+  }
+
+  .legal-section p + p,
+  .legal-section p + dl,
+  .legal-section dl + p {
+    margin-top: 18px;
+  }
+
+  .legal-details > div {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.8fr);
+    gap: 12px 28px;
+    padding: 14px 0;
+  }
+
+  .legal-details > div + div {
+    border-top: 1px solid var(--line);
+  }
+
+  .legal-details dt {
+    color: var(--blue);
+    font-weight: 600;
+  }
+
+  .legal-details dd {
+    overflow-wrap: anywhere;
+  }
+
+  .legal-details a {
+    text-underline-offset: 4px;
+  }
+
+  .legal-pending {
+    font-style: italic;
+  }
+
+  .legal-page > .text-link {
+    margin-top: 35px;
+  }
+
+  @media (max-width: 520px) {
+    .legal-header {
+      align-items: start;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+
+    .legal-page {
+      padding: 48px 21px 64px;
+    }
+
+    .legal-notice {
+      padding: 18px;
+    }
+
+    .legal-details > div {
+      grid-template-columns: 1fr;
+      gap: 3px;
+    }
+  }
+</style>

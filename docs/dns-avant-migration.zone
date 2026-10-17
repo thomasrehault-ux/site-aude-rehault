@@ -1,0 +1,20 @@
+; Relevé DNS public partiel le 17 octobre 2026. Pas un export complet de la zone.
+; Référence / retour arrière. Les A/AAAA web sont ceux de l’ANCIEN site.
+$ORIGIN auderehault.fr.
+$TTL 3600
+@ 86400 IN NS ns1109.ui-dns.org.
+@ 86400 IN NS ns1109.ui-dns.de.
+@ 86400 IN NS ns1109.ui-dns.com.
+@ 86400 IN NS ns1109.ui-dns.biz.
+@ IN A 217.160.0.214
+@ IN AAAA 2001:8d8:100f:f000::200
+www IN A 217.160.0.214
+www IN AAAA 2001:8d8:100f:f000::200
+@ IN MX 10 mx00.ionos.fr.
+@ IN MX 10 mx01.ionos.fr.
+@ IN TXT "v=spf1 include:_spf-eu.ionos.com ~all"
+_dmarc IN CNAME dmarc.ionos.fr.
+autodiscover IN CNAME adsredir.ionos.info.
+s1-ionos._domainkey IN CNAME s1.dkim.ionos.com.
+s2-ionos._domainkey IN CNAME s2.dkim.ionos.com.
+s42582890._domainkey IN CNAME s42582890.dkim.ionos.com.

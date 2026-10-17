@@ -1,4 +1,5 @@
 ---
+import AudeFooter from "../components/AudeFooter.astro";
 import "../styles/aude-v2.css";
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
@@ -387,37 +388,7 @@ const formations = [
       </section>
     </main>
 
-    <footer class="footer">
-      <a class="brand footer-brand" href="#accueil">
-        <img
-          class="brand-avatar"
-          src={asset("/assets/aude-rehault-portrait.jpg")}
-          alt=""
-          width="239"
-          height="315"
-          aria-hidden="true"
-        />
-        <span class="brand-copy"><strong>Aude Réhault</strong><small>Psychologue clinicienne</small></span>
-      </a>
-      <div>
-        <h2>Navigation</h2>
-        <a href="#accompagnements">Accompagnements</a>
-        <a href="#approche">Ma pratique</a>
-        <a href="#parcours">Mon parcours</a>
-        <a href="#publications">Publications</a>
-        <a href="#informations">Infos pratiques</a>
-      </div>
-      <div>
-        <h2>Cabinets</h2>
-        <p>Nantes · Clisson</p>
-      </div>
-      <div>
-        <h2>Informations</h2>
-        <p>Mentions légales</p>
-        <p>Politique de confidentialité</p>
-      </div>
-      <p class="footer-bottom">© {new Date().getFullYear()} Aude Réhault · Tous droits réservés</p>
-    </footer>
+    <AudeFooter />
 
     <script is:inline>
       const menuButton = document.querySelector(".menu-button");

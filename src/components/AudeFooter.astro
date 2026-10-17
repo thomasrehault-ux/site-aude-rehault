@@ -1,0 +1,36 @@
+---
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const home = `${base}/`;
+---
+
+<footer class="footer">
+  <a class="brand footer-brand" href={`${home}#accueil`}>
+    <img
+      class="brand-avatar"
+      src={`${base}/assets/aude-rehault-portrait.jpg`}
+      alt=""
+      width="239"
+      height="315"
+      aria-hidden="true"
+    />
+    <span class="brand-copy"><strong>Aude Réhault</strong><small>Psychologue clinicienne</small></span>
+  </a>
+  <div>
+    <h2>Navigation</h2>
+    <a href={`${home}#accompagnements`}>Accompagnements</a>
+    <a href={`${home}#approche`}>Ma pratique</a>
+    <a href={`${home}#parcours`}>Mon parcours</a>
+    <a href={`${home}#publications`}>Publications</a>
+    <a href={`${home}#informations`}>Infos pratiques</a>
+  </div>
+  <div>
+    <h2>Cabinets</h2>
+    <p>Nantes · Clisson</p>
+  </div>
+  <div>
+    <h2>Informations</h2>
+    <a href={`${base}/mentions-legales/`}>Mentions légales</a>
+    <p>Politique de confidentialité</p>
+  </div>
+  <p class="footer-bottom">© {new Date().getFullYear()} Aude Réhault · Tous droits réservés</p>
+</footer>

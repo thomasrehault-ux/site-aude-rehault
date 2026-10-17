@@ -1,0 +1,69 @@
+SÉLECTIONNER TOUT
+	TYPE	NOM D’HÔTE	VALEUR	SERVICE	ACTIONS
+
+Sélectionner
+	CNAME	_dmarc	dmarc.ionos.fr	DMARC	
+
+
+Sélectionner
+	MX	@	mx00.ionos.fr	Mail	
+
+
+Sélectionner
+	MX	@	mx01.ionos.fr	Mail	
+
+
+Sélectionner
+	CNAME	s1-ionos._domainkey	s1.dkim.ionos.com	Mail	
+
+
+Sélectionner
+	CNAME	s2-ionos._domainkey	s2.dkim.ionos.com	Mail	
+
+
+Sélectionner
+	CNAME	s42582890._domainkey	s42582890.dkim.ionos.com	Mail	
+
+
+Sélectionner
+	CNAME	autodiscover	adsredir.ionos.info	Mail	
+
+
+Sélectionner
+	A	@	217.160.0.214	Redirection: http://auderehault.wordpress.com/	
+
+
+Sélectionner
+	AAAA	@	2001:8d8:100f:f000:0:0:0:200	Redirection: http://auderehault.wordpress.com/	
+
+
+Sélectionner
+	TXT	_dep_ws_mutex	"a3b2556c852fc8775325814852a5ee607d5b2655914b73918158e9f79dcb6aa3_165217..."	Redirection: http://auderehault.wordpress.com/	
+
+
+Sélectionner
+	A	www	217.160.0.214	Redirection: http://auderehault.wordpress.com/	
+
+
+Sélectionner
+	AAAA	www	2001:8d8:100f:f000:0:0:0:200	Redirection: http://auderehault.wordpress.com/	
+
+
+Sélectionner
+	TXT	_dep_ws_mutex.www	"f544f6b3fac649309fd8b89f56c1f9899ed7094a8606e934cd35eff332339001_165217..."	Redirection: http://auderehault.wordpress.com/	
+
+
+Sélectionner
+	TXT	@	"v=spf1 include:_spf-eu.ionos.com ~all"	SPF	
+
+
+Sélectionner
+	CNAME	_domainconnect	_domainconnect.1and1.com	Enregistrement standard	
+
+
+Sélectionner
+	A	ftp	217.160.0.202	-	
+
+
+Sélectionner
+	AAAA	ftp	2001:8d8:100f:f000:0:0:0:211	-	

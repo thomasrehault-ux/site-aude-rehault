@@ -11,9 +11,9 @@ Préparation le 17 octobre 2026. Objectif : même domaine `auderehault.fr`, héb
 - Le compte Cloudflare connecté contient déjà les autres sites de Thomas ; le dépôt Aude y est accessible.
 - `contact@auderehault.fr` n’est pas encore créé selon les notes du projet. Ne pas publier de mailto avant un test de réception.
 
-## Sauvegarde DNS publique (partielle)
+## Sauvegarde DNS
 
-Le fichier `dns-avant-migration.zone` contient les enregistrements observés le 17 octobre 2026, pas un export exhaustif. Exporter la zone depuis IONOS avant de changer les serveurs DNS : un scan public ne découvre pas tous les noms.
+Le fichier `dns-avant-migration.zone` contient le relevé public du 17 octobre 2026 complété par les 17 enregistrements visibles dans le compte IONOS. `dns-ionos-avant-migration.txt` sauvegarde la table de gestion IONOS ; les deux valeurs TXT tronquées dans cette table ont été complétées par interrogation DNS. Il s’agit d’une sauvegarde manuelle, pas d’un export natif IONOS.
 
 Les MX, SPF, DKIM, DMARC et autodiscover doivent être préservés à l’identique et rester en mode **DNS only** dans Cloudflare. Conserver aussi tous les sous-domaines et vérifications de service de l’export complet. Ne pas basculer les MX vers OVH tant que les boîtes et leur migration ne sont pas prêtes.
 
@@ -60,4 +60,15 @@ Récupérer le code de transfert dans IONOS et le saisir directement dans le par
 
 ## État d’exécution
 
-La préparation du code ne prouve pas la bascule du domaine. Les déploiements, contrôles distants et actions restant à effectuer seront ajoutés après vérification.
+- PR [#3](https://github.com/thomasrehault-ux/site-aude-rehault/pull/3) intégrée sur `main` ; commit de fusion `a6854c410ebc199cf1d8560916cdde589f190363`.
+- Projet Cloudflare Pages `site-aude-rehault` créé, connecté à GitHub, compilation `npm run build`, sortie `dist`, production `main`.
+- Premier déploiement réussi : `16ef002e-7859-4faa-9bbc-6fbd8f7d0c04`, URL https://site-aude-rehault.pages.dev/.
+- Réponses distantes vérifiées : accueil/mentions/robots/sitemap en 200 ; `/contact/` et `/aude-rehault/formations/` en 301 vers les bonnes sections ; URL inconnue et `/directions/` en 404. Le brouillon graphique non suivi n’est pas publié. L’en-tête `noindex, nofollow` est bien présent sur `pages.dev`.
+- Compilation de production, compilation GitHub Pages, liens internes, ressources, ancres, canoniques et XML du sitemap vérifiés. Workflow GitHub Pages réussi sur le commit de fusion.
+- Zone Cloudflare `auderehault.fr` créée en formule Free, identifiant `ecadbdd572e4d1a285cddf30714c10a4`.
+- Scan automatique : 12 entrées. Les 3 CNAME DKIM et 2 TXT de l’ancienne redirection ont été ajoutés pour retrouver les 17 entrées IONOS. FTP, autodiscover, DMARC, domainconnect et DKIM sont en DNS only ; les MX et SPF sont inchangés.
+- IONOS a confirmé le remplacement des serveurs par `chan.ns.cloudflare.com` et `lars.ns.cloudflare.com` le 17 octobre 2026 vers 13 h 33 (Paris). Les quatre anciennes entrées web restent temporairement en DNS only pour conserver l’ancien site pendant l’attente d’activation Cloudflare.
+- L’association du domaine principal à Pages est encore bloquée par Cloudflare tant que la délégation n’est pas détectée active. La bascule web n’est donc **pas encore achevée**.
+- Règle Cloudflare `www vers auderehault.fr` enregistrée et activée : motif `http*://www.auderehault.fr/*`, destination `https://auderehault.fr/${2}`, code 301, paramètres conservés. Elle ne prendra effet qu’une fois la zone active et www en mode proxifié ; www reste temporairement en DNS only vers l’ancien site.
+- Transfert OVH préparé au nom d’Aude, sans validation de commande ni paiement. Panier observé : 4,59 € HT / 5,51 € TTC pour le transfert, puis renouvellement affiché à 7,79 € HT/an. Un compte e-mail est inclus. Le champ AUTH/EPP attend la saisie directe par Thomas. Vérifier ensuite les options DNS et conserver les serveurs Cloudflare ; ne pas activer un DS DNSSEC OVH incompatible avec la zone Cloudflare.
+- E-mail public, informations professionnelles des mentions, redirection de l’ancien WordPress, rattachement final du domaine, certificat et redirection www restent à finaliser.

@@ -1,4 +1,5 @@
-; Relevé DNS public partiel le 17 octobre 2026. Pas un export complet de la zone.
+; Relevé DNS public complété par les 17 entrées visibles dans le compte IONOS.
+; Sauvegarde manuelle le 17 octobre 2026, pas un export natif du fournisseur.
 ; Référence / retour arrière. Les A/AAAA web sont ceux de l’ANCIEN site.
 $ORIGIN auderehault.fr.
 $TTL 3600
@@ -18,3 +19,8 @@ autodiscover IN CNAME adsredir.ionos.info.
 s1-ionos._domainkey IN CNAME s1.dkim.ionos.com.
 s2-ionos._domainkey IN CNAME s2.dkim.ionos.com.
 s42582890._domainkey IN CNAME s42582890.dkim.ionos.com.
+_domainconnect IN CNAME _domainconnect.1and1.com.
+ftp IN A 217.160.0.202
+ftp IN AAAA 2001:8d8:100f:f000::211
+_dep_ws_mutex IN TXT "a3b2556c852fc8775325814852a5ee607d5b2655914b73918158e9f79dcb6aa3_1652170265577"
+_dep_ws_mutex.www IN TXT "f544f6b3fac649309fd8b89f56c1f9899ed7094a8606e934cd35eff332339001_1652170265551"

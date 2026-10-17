@@ -11,30 +11,30 @@ Page : `/mentions-legales/`, accessible depuis le pied de page de l’accueil et
 - Directrice de publication : Aude Réhault.
 - SIRET : 530 360 908 00020 (fourni : `53036090800020`).
 - RPPS : 10009472159.
-- Adresse e-mail retenue : contact@auderehault.fr, création et fonctionnement à vérifier chez OVH.
+- Adresse e-mail retenue : contact@auderehault.fr, boîte créée et active chez OVH ; test de fonctionnement confié à Thomas.
 - Domaine définitif : `auderehault.fr`, identique au site actuel.
 - Pays d’obtention du titre de psychologue : France.
 - Aucun numéro de TVA intracommunautaire, selon confirmation de Thomas. Aucune déduction sur le régime d’exonération.
 
-## Informations à confirmer pour finaliser la page
+## Informations confirmées et suivi
 
 - Organisme confirmé par Thomas : Agence régionale de santé (ARS) des Pays de la Loire. Référence ajoutée : article 44 de la loi n° 85-772 du 25 juillet 1985, avec lien vers la présentation officielle du ministère.
-- Création et test de l’adresse de contact dans la messagerie OVH.
-- L’hébergeur est désormais préparé pour Cloudflare Pages à la racine ; l’aperçu sous le sous-répertoire GitHub conserve ses coordonnées GitHub. Coordonnées Cloudflare vérifiées : Cloudflare, Inc., 101 Townsend Street, San Francisco, CA 94107, États-Unis, +1 650 319 8930 ([source officielle](https://www.cloudflare.com/privacypolicy/)). La création de l’adresse e-mail et les informations professionnelles en attente restent à finaliser.
+- Boîte OVH créée et active. Thomas prend en charge ultérieurement le test réel de réception et d’envoi.
+- L’hébergeur est désormais préparé pour Cloudflare Pages à la racine ; l’aperçu sous le sous-répertoire GitHub conserve ses coordonnées GitHub. Coordonnées Cloudflare vérifiées : Cloudflare, Inc., 101 Townsend Street, San Francisco, CA 94107, États-Unis, +1 650 319 8930 ([source officielle](https://www.cloudflare.com/privacypolicy/)). L’ARS des Pays de la Loire est confirmée et l’adresse e-mail est publiée à la demande de Thomas.
 
 ## Proposition d’adresse e-mail
 
-Adresse retenue par Thomas : `contact@auderehault.fr`, à créer dans la boîte Zimbra Starter incluse avec le transfert OVH (commande n° 261297459). La page la conserve en attente de création. Ne pas publier de lien `mailto:` avant que l’adresse existe et que la réception ait été vérifiée.
+Adresse retenue par Thomas : `contact@auderehault.fr`, créée dans une boîte Zimbra Starter de 15 Gio, active chez OVH. Les diagnostics MX/SPF/SRV/DKIM sont tous « Configuration OK ». Thomas demande explicitement de publier l’adresse et de lui laisser le test de réception/envoi pour plus tard. Le lien `mailto:` est donc publié sans affirmer qu’un échange réel a été testé.
 
 La création effective de la boîte ou d’un alias nécessite le domaine et l’accès au service de messagerie. Aucun service de messagerie n’est configuré dans ce dépôt.
 
-Les MX IONOS restent temporairement en place. Thomas indique avoir validé la création dans OVH, mais la liste Zimbra actualisée affiche encore zéro compte. Le domaine attend la validation de son CNAME ; vérifier ensuite la création effective et configurer les DNS OVH avant de tester la réception.
+Le domaine a été validé par CNAME et les MX, SPF, SRV, DKIM et DMARC sont maintenant configurés dans Cloudflare pour OVH. Le détail et les vérifications figurent dans `docs/mise-en-ligne.md`.
 
 Le site est désormais déployé sur Cloudflare Pages avec le domaine de production `auderehault.fr`. L’aperçu GitHub Pages est conservé séparément.
 
-## État du brouillon
+## État de la page
 
-La page affiche « Version en préparation » et indique les informations manquantes. Elle porte `noindex, follow` tant que les informations ne sont pas confirmées. La branche et la PR permettent de relire le résultat avant publication sur `main`.
+La mention « Version en préparation » et l’adresse proposée ont été remplacées par les informations confirmées et le lien de contact. La page conserve `noindex, follow`, car elle présente des informations administratives ; l’accueil reste indexable.
 
 La politique de confidentialité reste un sujet distinct : le site charge des polices Google et intègre un lecteur YouTube. Ne pas affirmer que le site n’utilise aucun service tiers ou ne traite aucune donnée personnelle.
 
